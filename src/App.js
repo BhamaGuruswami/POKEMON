@@ -1,59 +1,53 @@
-import './App.css';
-import React,{useState,useEffect} from 'react';
- import Home from './Component/Home.jsx';
- import axios, { Axios } from 'axios'
- import Pagination from './Pagination'
-//  import Person from './Person'
-// import Personadd from './Personadd';
-// import Personremove from './Personremove';
-function App() {
-const[pokemon,setpokemon]= useState([])
-const [currentpage,setCurrentpage]=useState('https://pokeapi.co/api/v2/pokemon/')
-const [nextpage,setNextpage]=useState()
-const [prevpage,setPrevpage]=useState()
-const [loading,setLoading]=useState(true)
+import React, { useEffect, useState } from 'react'
+import Home from './Component/Home'
+// import PokemonDetails from './components/PokemonDetails'
 
-useEffect(()=>{
-  let cancel 
-  setLoading(true)
-  axios.get(currentpage,{
-    cancelToken:new axios.CancelToken(c=>cancel= c)  
+const App = () => {
+   const[allPokemons, setAllPokemons] = useState([])
+   const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=20')
 
-  }).then(res=>{
-    setLoading(false)
-    setNextpage(res.data.next)
-    setPrevpage(res.data.previous)
-    setpokemon(res.data.results.map(p => p.name))
-  })
+  const getAllPokemons = async () => {
+    const res = await fetch(loadMore)
+    const data = await res.json()
 
-  return () =>
-  cancel()
-},[currentpage])
+    setLoadMore(data.next)
 
-function gonextpage(){
-  setCurrentpage(nextpage)
-}
-function goprevpage(){
-  setCurrentpage(prevpage)
-}
+    function createPokemonObject(results)  {
+      results.forEach( async pokemon => {
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
+        const data =  await res.json()
+        setAllPokemons( currentList => [...currentList, data])
+        await allPokemons.sort((a, b) => a.id - b.id)
+      })
+    }
+    createPokemonObject(data.results)
+  }
 
-if(loading) return 'Loading....'
+ useEffect(() => {
+  getAllPokemons()
+ }, [])
+
   return (
-    <div className="App">
-      <p>hello pokemon</p> 
-      <>
-     {/* <Home pokemon={pokemon}/>
-     <Pagination
-     gonextpage={nextpage ?  gonextpage:null}
-     goprevpage={prevpage? goprevpage:null}
+    <div className="app-contaner">
+      <h1>Pokemon Evolution</h1>
+      <div className="pokemon-container">
+        <div className="all-container">
+          {allPokemons.map( (pokemonStats, index) => 
+            <Home
+              key={index}
+              id={pokemonStats.id}
+              image={pokemonStats.sprites.other.dream_world.front_default}
+              name={pokemonStats.name}
+              type={pokemonStats.types[0].type.name}
+              height={pokemonStats.height}
+              weight={pokemonStats.weight}
+              base_experience={pokemonStats.base_experience}
 
-     />  */}
-     <Home/>
-     </>
-      {/* <Personadd/>
-      <Personremove/>
-
-      <Person/> */}
+            />)}
+          
+        </div>
+          <button className="load-more" onClick={() => getAllPokemons()}>Load more</button>
+      </div>
     </div>
   );
 }
