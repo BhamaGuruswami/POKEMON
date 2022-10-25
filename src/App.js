@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Home from './Component/Home'
-// import PokemonDetails from './components/PokemonDetails'
 
 const App = () => {
    const[allPokemons, setAllPokemons] = useState([])
@@ -25,11 +24,11 @@ const App = () => {
 
  useEffect(() => {
   getAllPokemons()
- }, [])
+ },[])
 
   return (
     <div className="app-contaner">
-      <h1>Pokemon Evolution</h1>
+      <h1>Pokemon </h1>
       <div className="pokemon-container">
         <div className="all-container">
           {allPokemons.map( (pokemonStats, index) => 
