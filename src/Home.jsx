@@ -9,7 +9,7 @@ const Home=()=>{
     const [url,setUrl]=useState("https://pokeapi.co/api/v2/pokemon/")
     const [nextUrl,setNextUrl]=useState();
     const [prevUrl,setPrevUrl]=useState();
-    const [pokeDex,setPokeDex]=useState();
+    // const [pokeDex,setPokeDex]=useState();
 
     const pokeFun=async()=>{
         setLoading(true)
