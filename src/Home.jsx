@@ -1,6 +1,5 @@
 import React from "react";
 import Box from "./Component/Box";
-import Info from "./Component/Info";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";

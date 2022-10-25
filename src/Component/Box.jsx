@@ -8,16 +8,20 @@ import { Grid } from '@mui/material';
 
 const Box = ({ pokemon, loading, infoPokemon }) => {
     // console.log(pokemon);
+
     return (
         <>
             {
                 loading ? <h1>Loading...</h1> :
                     pokemon.map((item) => {
+                        // const backcolor =`grid ${item.types[0].type.name}` ;
+
                         return (
                             <>
                                 <div 
                                 // className="card"
-                                 key={item.id} onClick={() => infoPokemon(item)}>
+                                 key={item.id} onClick={() => infoPokemon(item)}
+                                 >
 
                                     <Grid container >
                                         <Card  sx={{ height:500,marginBottom:0}}>
