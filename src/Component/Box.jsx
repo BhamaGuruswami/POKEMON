@@ -20,16 +20,18 @@ const Box = ({ pokemon, loading, infoPokemon }) => {
                             <>
                                 <div 
                                 // className="card"
-                                 key={item.id} onClick={() => infoPokemon(item)}
+                                 key={item.id}
+                                //   onClick={() => infoPokemon(item)}
                                  >
 
-                                    <Grid container >
-                                        <Card  sx={{ height:500,marginBottom:0}}>
+                                    <Grid container  >
+                                        <Grid sm={12}>
+                                        <Card  sx={{ height:450}}>
                                             0{item.id}
                                             <CardMedia
                                                 component="img"
-                                                // height={394}
-                                                // width={1090}
+                                                height={244}
+                                                width={390}
                                                 image={item.sprites.other.dream_world.front_default}
                                                 alt={item.name}
                                             />
@@ -50,6 +52,8 @@ const Box = ({ pokemon, loading, infoPokemon }) => {
                                                 </Typography>
                                             </CardContent>
                                         </Card>
+                                        </Grid>
+
                                     </Grid>
 
                                 </div>

@@ -14,13 +14,12 @@ body{
     justify-content: center;
 }
 .left-content
-/* .right-content */
 {
     flex-basis: 90%;
 }
 .left-content{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
+    grid-template-columns: repeat(auto-fit,minmax(250px,0.5fr));
     grid-gap:2rem;
 }
 h1{
@@ -81,4 +80,5 @@ h1{
     color: white;
     background-color: #b74555;
     border-radius: 8px;
+    text-align: center;
 }

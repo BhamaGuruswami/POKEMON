@@ -30,14 +30,16 @@ const Home=()=>{
        })   
     }
     useEffect(()=>{
-        pokeFun();
+         pokeFun();
     },[url])
     return(
         <>
             <div className="container">
                 <div className="left-content">
 
-                    <Box pokemon={pokeData} loading={loading} infoPokemon={poke=>setPokeDex(poke)}/>
+                    <Box pokemon={pokeData} loading={loading} 
+                    // infoPokemon={poke=>setPokeDex(poke)}
+                    />
                     
                     <div className="btn-group">
                         {  prevUrl && <button onClick={()=>{
