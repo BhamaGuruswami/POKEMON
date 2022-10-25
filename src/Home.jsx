@@ -1,10 +1,9 @@
 import React from "react";
-// import Card from "./Card";
-import Box from './Component/Box'
+import Box from "./Component/Box";
+import Info from "./Component/Info";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-
 const Home=()=>{
     const [pokeData,setPokeData]=useState([]);
     const [loading,setLoading]=useState(true);
@@ -38,25 +37,24 @@ const Home=()=>{
         <>
             <div className="container">
                 <div className="left-content">
-                    {/* <div  infoPokemon={poke=>setPokeDex(poke)}/> */}
-                    <Box  pokemon={pokeData} loading={loading} />
-
+                    <Box pokemon={pokeData} loading={loading} infoPokemon={poke=>setPokeDex(poke)}/>
+                    
                     <div className="btn-group">
-                        {/* {  prevUrl && <button onClick={()=>{
+                        {  prevUrl && <button onClick={()=>{
                             setPokeData([])
                            setUrl(prevUrl) 
-                        }}>Previous</button>} */}
+                        }}>Previous</button>}
 
-                        {/* { nextUrl && <button onClick={()=>{
+                        { nextUrl && <button onClick={()=>{
                             setPokeData([])
                             setUrl(nextUrl)
-                        }}>Next</button>} */}
+                        }}>Next</button>}
 
                     </div>
                 </div>
-                <div className="right-content">
-                   {/* <Box data={pokeDex}/> */}
-                </div>
+                {/* <div className="right-content">
+                   <Info data={pokeDex}/>
+                </div> */}
             </div>
         </>
     )
