@@ -8,20 +8,24 @@ body{
     /* background-color: #FCEEC8; */
 }
 .container{
-    width: 90%;
-    margin: auto;
+    width: 100%;
     padding-top: 100px;
     display: flex;
+    justify-content: center;
 }
 .left-content
 /* .right-content */
 {
-    flex-basis: 50%;
+    flex-basis: 90%;
 }
 .left-content{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
     grid-gap:2rem;
+}
+h1{
+    text-align: center;
+    margin-top: 10px;
 }
 /* .card{
     width: 300px;

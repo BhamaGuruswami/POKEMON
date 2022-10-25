@@ -37,6 +37,7 @@ const Home=()=>{
         <>
             <div className="container">
                 <div className="left-content">
+
                     <Box pokemon={pokeData} loading={loading} infoPokemon={poke=>setPokeDex(poke)}/>
                     
                     <div className="btn-group">
@@ -52,9 +53,6 @@ const Home=()=>{
 
                     </div>
                 </div>
-                {/* <div className="right-content">
-                   <Info data={pokeDex}/>
-                </div> */}
             </div>
         </>
     )
