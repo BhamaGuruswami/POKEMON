@@ -4,13 +4,16 @@ import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import '../App.css'
+import { Grid } from '@mui/material';
+// import '../App.css'
 
 const Home = ({id, image, name, type,height,weight,base_experience,_callback }) => {
     const backcolor =`thumb-container ${type}` ;
     return (
         <div >
-            <Card className={backcolor}  sx={{ maxWidth: 345,margin:5,display:'flex',flexWrap:'wrap',alignItems:'center',justifyContent:'center'}}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+          <Card className={backcolor}  sx={{ maxWidth: 345,margin:5,display:'flex',flexWrap:'wrap',alignItems:'center',justifyContent:'center'}}>
             0{id}
          <CardMedia
         component="img"
@@ -40,6 +43,9 @@ const Home = ({id, image, name, type,height,weight,base_experience,_callback }) 
         base_experience: {base_experience}        </Typography>
       </CardContent>
     </Card>
+    
+          </Grid>
+          </Grid>
 
         </div>
         
