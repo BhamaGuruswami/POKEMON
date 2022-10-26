@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    color: #2C3F3B;
 }
 body{
     /* background-color: #FCEEC8; */
@@ -15,7 +16,7 @@ body{
 }
 .left-content
 {
-    flex-basis: 90%;
+    flex-basis: 50%;
 }
 .left-content{
     display: grid;

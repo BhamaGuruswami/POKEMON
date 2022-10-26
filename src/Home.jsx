@@ -1,15 +1,18 @@
 import React from "react";
 import Box from "./Component/Box";
+import Info from './Component/Info'
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import Grid from '@mui/material/Grid';
+
 const Home=()=>{
     const [pokeData,setPokeData]=useState([]);
     const [loading,setLoading]=useState(true);
     const [url,setUrl]=useState("https://pokeapi.co/api/v2/pokemon/")
     const [nextUrl,setNextUrl]=useState();
     const [prevUrl,setPrevUrl]=useState();
-    // const [pokeDex,setPokeDex]=useState();
+    const [pokeDex,setPokeDex]=useState();
 
     const pokeFun=async()=>{
         setLoading(true)
@@ -35,10 +38,12 @@ const Home=()=>{
     return(
         <>
             <div className="container">
-                <div className="left-content">
-
+            <Grid container spacing={2}>
+        <Grid item xs={6} >
+        <div className="left-content">
+            
                     <Box pokemon={pokeData} loading={loading} 
-                    // infoPokemon={poke=>setPokeDex(poke)}
+                    infoPokemon={poke=>setPokeDex(poke)}
                     />
                     
                     <div className="btn-group">
@@ -54,6 +59,15 @@ const Home=()=>{
 
                     </div>
                 </div>
+
+        </Grid>
+        <Grid item xs={4}>
+                  <Info data={pokeDex}/>
+        </Grid>
+       
+       
+      </Grid>
+                
             </div>
         </>
     )
