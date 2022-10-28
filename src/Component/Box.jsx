@@ -27,7 +27,7 @@ const Box = ({ pokemon, loading, infoPokemon }) => {
                                         <Grid sm={12} sx={{ justifyContent: "center" }}>
                                             <div >
                                                 <Card className={backcolor}
-                                                    sx={{ height: 314, width: 268, textAlign: 'center', }}>
+                                                    sx={{ height: 314, width: 268, textAlign: 'center',marginLeft:'22px' }}>
                                                     <CardMedia
                                                         component="img"
                                                         height={244}

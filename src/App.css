@@ -10,9 +10,10 @@ body{
 }
 .container{
     width: 100%;
-    padding-top: 100px;
+    padding-top: 10px;
     display: flex;
-    justify-content: center;
+    margin-left: 13px;
+
 }
 .left-content
 {
@@ -23,10 +24,7 @@ body{
     grid-template-columns: repeat(auto-fit,minmax(250px,0.5fr));
     grid-gap:2rem;
 }
-h1{
-    text-align: center;
-    margin-top: 10px;
-}
+
 /* .card{
     width: 300px;
     background-color:#9EDEF9;

@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
 
 const Info = ({ data }) => {
-    const backcolor = `card ${data.types[0].type.name}`
+//   const  backcolor = `Container-all ${data.types[0].type.name}`
 
     return (
         <>
@@ -19,18 +19,17 @@ const Info = ({ data }) => {
                             <Grid sm={12} sx={{ justifyContent: "center" }}>
                                 <div >
                                     <Card
-                                        sx={{ height: 404, width: 368, textAlign: 'center', }}>
+                                        sx={{ height: 404, width: 368, textAlign: 'center',}}>
                                         <CardMedia
                                             component="img"
                                             height={334}
                                             image={data.sprites.other.dream_world.front_default}
                                             alt={data.name}
-                                            className={backcolor}
+
                                         />
                                         <CardHeader sx={{ textTransform: 'capitalize', textAlign: 'center' }}
                                             title={data.name}
                                             subheader={data.id}
-                                            className={backcolor}
 
                                         />
                                         <CardContent>
@@ -50,14 +49,14 @@ const Info = ({ data }) => {
                                     </Card>
                                 </div>
                                 <b>Type</b> : {data.types[0].type.name}
-                                <br></br>
-                                <b>height</b> : {data.height}
-                                <br></br>
-                                <b>weight</b> : {data.weight}
-                                <br></br>
-                                <b>base_experience</b> : {data.base_experience}
-                                <br></br>
-                                <b>order</b> :{data.order}
+                                                <br></br>
+                                                <b>height</b> : {data.height}
+                                                <br></br>
+                                                <b>weight</b> : {data.weight}
+                                                <br></br>
+                                                <b>base_experience</b> : {data.base_experience}
+                                                <br></br>
+                                                <b>order</b> :{data.order}
 
                             </Grid>
                         </Grid>
