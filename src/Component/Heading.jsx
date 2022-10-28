@@ -3,10 +3,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import { styled, alpha } from '@mui/material/styles';
 
-
-
-
-
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     border:'1px solid grey',

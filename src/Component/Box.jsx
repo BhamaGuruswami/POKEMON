@@ -27,11 +27,11 @@ const Box = ({ pokemon, loading, infoPokemon }) => {
                                         <Grid sm={12} sx={{ justifyContent: "center" }}>
                                             <div >
                                                 <Card className={backcolor}
-                                                    sx={{ height: 314, width: 268, textAlign: 'center',marginLeft:'22px' }}>
+                                                    sx={{ height: 334, width: 268, textAlign: 'center',marginLeft:'22px' }}>
                                                     <CardMedia
                                                         component="img"
-                                                        height={244}
-                                                        width={390}
+                                                        height={254}
+                                                        width={490}
                                                         image={item.sprites.other.dream_world.front_default}
                                                         alt={item.name}
                                                         className={backcolor}

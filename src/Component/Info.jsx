@@ -1,14 +1,36 @@
 import React from "react";
+import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
+import CardActions from '@mui/material/CardActions';
+import Collapse from '@mui/material/Collapse';
+import IconButton from '@mui/material/IconButton';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
-const Info = ({ data }) => {
-  const  backcolor = `Container-all ${data.types[0].type.name}`
-
+//   const  backcolor = `Container-all ${data.types[0].type.name}`
+const ExpandMore = styled((props) => {
+    const { expand, ...other } = props;
+    return <IconButton {...other} />;
+  })(({ theme, expand }) => ({
+    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+  }));
+  
+  const Info = ({ data }) => {
+  
+    const [expanded, setExpanded] = React.useState(false);
+  
+    const handleExpandClick = () => {
+      setExpanded(!expanded);
+    };
+    
     return (
         <>
             {
@@ -18,7 +40,7 @@ const Info = ({ data }) => {
                         <Grid container   >
                             <Grid sm={12} sx={{ justifyContent: "center" }}>
                                     <Card
-                                        sx={{ height: 554, width: 368, textAlign: 'center',}}>
+                                        sx={{ height: 654, width: 368, textAlign: 'center',}}>
                                         <CardMedia
                                             component="img"
                                             height={334}
@@ -33,55 +55,43 @@ const Info = ({ data }) => {
                                         />
                                         <CardContent>
                                             <Typography variant="body2" display="block">
-                                                <b>Type</b> : {data.types[0].type.name}
-                                                <br></br>
+                                                <b>Type</b> : {data.types[0].type.name} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <b>height</b> : {data.height}
                                                 <br></br>
-                                                <b>weight</b> : {data.weight}
+                                                <b>weight</b> : {data.weight} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <b>order</b> :{data.order}
                                                 <br></br>
                                                 <b>base_experience</b> : {data.base_experience}
-                                                <br></br>
-                                                <b>order</b> :{data.order}
                                             </Typography>
                                         </CardContent>
+                                        <CardActions disableSpacing>
+
+<ExpandMore
+  expand={expanded}
+  onClick={handleExpandClick}
+  aria-expanded={expanded}
+  aria-label="show more"
+>
+  <ExpandMoreIcon />
+</ExpandMore>
+</CardActions>
+<Collapse
+ in={expanded}
+ timeout="auto" unmountOnExit>
+<CardContent>
+  <Typography paragraph>species:</Typography>
+  <Typography paragraph>
+  {data.form_description}
+  </Typography>
+
+</CardContent>
+</Collapse>
 
                                     </Card>
 
                             </Grid>
                         </Grid>
-                        {/* <h1>{data.name}</h1>
-                    <h1>{data.id}</h1>
-                    <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${data.id}.svg`} alt="" />
-                    <div className="abilities">
-                        {
-                            data.abilities.map(poke=>{
-                                return(
-                                    <>
-                                     <div className="group">
-                                          <b>Type</b> : {data.types[0].type.name}
-                                                    <br></br>
-                                                   <b>height</b> : {data.height}
-                                                    <br></br>
-                                                    <b>weight</b> : {data.weight}
-                                                    <br></br>
-                                                   <b>base_experience</b> : {data.base_experience}
-                                                    <br></br>
-                                                   <b>order</b> :{data.order}                                    </div>
-                                    </>
-                                )
-                            })
-                        }
-                    </div> */}
-                        {/* <div className="base-stat">
-                        {
-                            data.stats.map(poke=>{
-                                return(
-                                    <>
-                                    </>
-                                )
-                            })
-                        }
-                    </div> */}
+                  
                     </>
                 )
             }
@@ -89,4 +99,4 @@ const Info = ({ data }) => {
         </>
     )
 }
-export default Info;
+export default Info
