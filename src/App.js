@@ -4,14 +4,11 @@ import './App.css'
 import Modal from './Component/Modal.jsx';
 import { Grid } from '@mui/material';
 function App() {
-  
- 
-  
   return (
     <>
     <Grid>          
       <Home/>
-      <Modal/>
+      {/* <Modal/> */}
     </Grid>
     </>
 
