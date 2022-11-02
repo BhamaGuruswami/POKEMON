@@ -43,10 +43,10 @@ const Home = () => {
                 <Grid>
                     <Typography sx={{ marginLeft: '23px', }}>
 
-                        <Typography sx={{ marginRight:'48px' }}>
+                        <Typography sx={{ marginRight:'3px' }}>
                             <h1>Pokedex</h1>
                             <p> Search for a pokemon
-                                by name or using the national pokedex number
+                        
                             </p>
                         </Typography>
                         <Grid item xs={12}>
