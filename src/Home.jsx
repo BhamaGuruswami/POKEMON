@@ -41,9 +41,9 @@ const Home = () => {
 
             <div className="container">
                 <Grid>
-                    <Typography sx={{ marginLeft: '23px', }}>
+                    <Typography sx={{ marginLeft: '31px', }}>
 
-                        <Typography sx={{ marginRight:'3px' }}>
+                        <Typography sx={{marginLeft:1 }}>
                             <h1>Pokedex</h1>
                             <p> Search for a pokemon
                         
