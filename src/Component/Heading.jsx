@@ -11,7 +11,7 @@ const Search = styled('div')(({ theme }) => ({
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   width: '100%',
-  marginRight:'458px',
+  marginRight:'460px',
   textAlign:'center',
   [theme.breakpoints.up('sm','sx')]:
    {
@@ -20,8 +20,8 @@ const Search = styled('div')(({ theme }) => ({
   [theme.breakpoints.down('sm','sx')]:
    {
     width: '76%',
-    marginRight:'329px',
-    marginLeft:'7px',
+    marginRight:'332px',
+    marginLeft:'1px',
   }
 
 }));
