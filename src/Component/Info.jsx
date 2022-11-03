@@ -40,7 +40,7 @@ const ExpandMore = styled((props) => {
                         <Grid container   >
                             <Grid sm={12} sx={{ justifyContent: "center" }}>
                                     <Card
-                                        sx={{ height: 654, width: 368, textAlign: 'center',marginLeft:4}}>
+                                        sx={{ height: 654, width: 368, textAlign: 'center',marginLeft:10}}>
                                         <CardMedia
                                             component="img"
                                             height={334}

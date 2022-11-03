@@ -65,7 +65,7 @@ const Heading = () => {
               inputProps={{ 'aria-label': 'search' }}
               style={{
                 margin: '0 auto',
-                maxWidth: 800
+                maxWidth: 162
               }}
             />
              
