@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #2C3F3B;
 }
+.container{
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    margin-left: 30px;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.left-content
+{
+    flex-basis: 50%;
+}
+.left-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,0.5fr));
+    grid-gap:2rem;
+}
+  /* background color according to the types */
+.rock {
+    background-color: rgb(148, 81, 81);
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .ghost {
+    background-color: rgb(247, 247, 247);
   }
-  to {
-    transform: rotate(360deg);
+  .electric {
+    background-color: rgb(255, 255, 161);
   }
+  .bug {
+    background-color: #F6D6A7;
+  }
+  .poison {
+    background-color: #e0a7f6;
+  }
+  .normal {
+    background-color: #F4F4F4;
+  }
+  .fairy {
+    background-color: rgba(255, 192, 203, 0.863);
+  }
+  .fire {
+    background-color: #FBE3DF;
+  }
+  .grass {
+    background-color:#E2F9E1;
+  }
+  .water {
+    background-color:#E0F1FD;
+  }
+
+.btn-group button{
+    outline: none;
+    border: none;
+    width: 150px;
+    padding: 0.3rem 0;
+    margin: 1rem;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    background-color: #b74555;
+    border-radius: 8px;
+    text-align: center;
 }
