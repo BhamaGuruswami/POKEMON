@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Heading from "./Component/Heading";
+import Modal from './Component/Modal'
 const Home = () => {
     const [pokeData, setPokeData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -64,7 +65,7 @@ const Home = () => {
                         <div className="left-content">
 
                             <Box pokemon={pokeData} loading={loading}
-                                infoPokemon={poke => setPokeDex(poke)}
+                                details={poke => setPokeDex(poke)}
                             />
 
                             <div className="btn-group">
@@ -82,8 +83,11 @@ const Home = () => {
                         </div>
 
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={1} sx={{ display: { xs: 'none', sm: 'block' } }}>
                         <Info data={pokeDex} />
+                    </Grid>
+                    <Grid item xs={1} sx={{ display: { xs: 'block', sm: 'none' } }}>
+                        <Modal data={pokeDex} />
                     </Grid>
 
 

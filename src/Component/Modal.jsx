@@ -2,10 +2,10 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
+import List from '@mui/material/List';
 import Info from "./Info"
-import Home from "../Home"
-export default function Model() {
+
+export default function Modal({data}) {
   const [state, setState] = React.useState({
     bottom: false,
   });
@@ -20,28 +20,28 @@ export default function Model() {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' }}
+      sx={{ width: anchor === 'bottom' }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <Grid 
-            sx={{ margin:0,width:50,paddingLeft:500 }}
 
-      >
+      <List>
       <Info/>
+      </List>
 
-      </Grid>
-    
     </Box>
   );
 
   return (
     <div>
+           <>
+            {
+                (!data) ? "" : (
+                    <>
       {[ 'bottom'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor} <Home />
-          </Button>
+          <Button onClick={toggleDrawer(anchor, true)}>{anchor} </Button>
           <Drawer
             anchor={anchor}
             open={state[anchor]}
@@ -51,6 +51,11 @@ export default function Model() {
           </Drawer>
         </React.Fragment>
       ))}
+      </>
+      )
+  }
+
+</>
     </div>
   );
 }
